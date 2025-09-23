@@ -20,3 +20,8 @@ function isLegalAge(age:number):boolean{
 }
 console.log(isLegalAge(20));
 console.log(isLegalAge(10));
+
+function printName(fn:()=>void){
+    setTimeout(fn,5000);
+}
+printName(()=>console.log("John Doe"));

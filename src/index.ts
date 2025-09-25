@@ -28,29 +28,29 @@
 // printName(()=>console.log("John Doe"));
 
 // learn about interfaces
-interface UserType{
-    name:string;
-    age:number;
-    isAdmin?:boolean; //optional property
+// interface UserType{
+//     name:string;
+//     age:number;
+//     isAdmin?:boolean; //optional property
 
-}
-function printUser(user:UserType):void{
-    console.log(`Name: ${user.name}`);
-    console.log(`Age: ${user.age}`);
-    if(user.isAdmin){
-        console.log(`Is Admin: ${user.isAdmin}`);
-    }
+// }
+// function printUser(user:UserType):void{
+//     console.log(`Name: ${user.name}`);
+//     console.log(`Age: ${user.age}`);
+//     if(user.isAdmin){
+//         console.log(`Is Admin: ${user.isAdmin}`);
+//     }
 
-}
-const user1=printUser({
-    name:"John Doe",    
-    age:30,
-    isAdmin:true
-});
-console.log(user1);
+// }
+// const user1=printUser({
+//     name:"John Doe",    
+//     age:30,
+//     isAdmin:true
+// });
+// console.log(user1);
 
 // Learn about type
-// in type we can use union type 
+// in type we can use intersection type 
 type Manager={
     name:string | number;
     age:number | string;
@@ -64,3 +64,58 @@ type Employee={
     salary:number;
 }
 type teamleade=Manager & Employee; //intersection type
+
+let m:Manager={
+    name:"Alice",
+    age:28,
+    isAdmin:true,
+    role:"Project Manager",
+}
+
+let e:Employee={
+    name:"Bob",
+    age:25,
+    isAdmin:false,
+    salary:50000,
+}
+let t:teamleade={
+    name:"Charlie",
+    age:30,
+    isAdmin:true,
+    role:"Team Lead",
+    salary:70000,
+}
+
+// Union type
+// Union can have either one or all
+type Cat={
+    name:string;
+    age:number;
+    meow:()=>string;
+}
+interface Dog{
+    name:string;
+    age:number;
+    bark:()=>string;
+}
+type pet=Cat | Dog; //union type
+let c:pet={
+    name:"Tom",
+    age:2,
+    bark:():string=>{
+        return "Bark Bark";
+    }
+}
+console.log(c.bark());
+
+function greet(user:pet){
+    console.log(`Hello ${user.name}`);
+    if("meow" in user){
+        console.log(user.meow());
+    }
+    if("bark" in user){
+        console.log(user.bark());
+    }
+    console.log(user.age);
+}
+greet(c);

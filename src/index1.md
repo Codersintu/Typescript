@@ -40,12 +40,19 @@ Where should the compiler look for spit out the .js files.
 Try enabling it and see the compilation errors on the following code - 
 
 
-<!-- next*********** -->
-Interference and Types 
+<!-- next*********** important topic-->
+Interface and Types 
 1. What are interfaces
 How can you assign types to objects? For example, a user object that looks like this - 
 
 What are types?
 Very similar to interfaces , types let you aggregate data together.
+
+<!--  -->
+Union(|):Accept any one of the types listed.
+Intersection(&):require all types combined.
+<!--  -->
  
- <!-- interference and types se related code index.ts mein hai -->
+ <!-- interf and taceypes se related code index.ts mein hai -->
+
+<!-- for 14.2 class go to index2.md && ts  -->

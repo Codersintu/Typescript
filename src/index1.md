@@ -52,6 +52,11 @@ Very similar to interfaces , types let you aggregate data together.
 Union(|):Accept any one of the types listed.
 Intersection(&):require all types combined.
 <!--  -->
+<!-- difference between Interface & Union -->
+1.interfaces can be implements by class
+2.types cannot be implements by classes
+3.types lets u do Union and intersection
+4.interface dont let u do union(|) and intersection(&)
  
  <!-- interf and taceypes se related code index.ts mein hai -->
 
